@@ -24,7 +24,7 @@ func TestGuessOnFinishedGameRaisesError(t *testing.T) {
 func TestGuessWithWrongAtLastTryLoses(t *testing.T) {
 	game := Game{Solution: Word{Letters: "NAVAL"}, Tries: maxTries - 1, State: Started}
 	game, feedback, err := game.Guess(Word{Letters: "HELLO"})
-	assert.Equal(t, State(Lost), game.State)
+	assert.Equal(t, GameState(Lost), game.State)
 	assert.Equal(t, feedback, Feedback{Colors: []Color{Grey, Grey, Yellow, Grey, Grey}})
 	assert.Nil(t, err)
 }
@@ -33,7 +33,7 @@ func TestGuessWithWrongNotAtLastTryContinues(t *testing.T) {
 	game := Game{Solution: Word{Letters: "NAVAL"}, Tries: 1, State: Started}
 	game, feedback, err := game.Guess(Word{Letters: "HELLO"})
 	assert.Equal(t, 2, game.Tries)
-	assert.Equal(t, State(Started), game.State)
+	assert.Equal(t, GameState(Started), game.State)
 	assert.Equal(t, feedback, Feedback{Colors: []Color{Grey, Grey, Yellow, Grey, Grey}})
 	assert.Nil(t, err)
 }
@@ -42,7 +42,7 @@ func TestGuessWithSolutionWins(t *testing.T) {
 	game := Game{Solution: Word{Letters: "NAVAL"}, Tries: 1, State: Started}
 	game, feedback, err := game.Guess(Word{Letters: "NAVAL"})
 	assert.Equal(t, 2, game.Tries)
-	assert.Equal(t, State(Won), game.State)
+	assert.Equal(t, GameState(Won), game.State)
 	assert.Equal(t, feedback, Feedback{Colors: []Color{Green, Green, Green, Green, Green}})
 	assert.Nil(t, err)
 }
