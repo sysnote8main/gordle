@@ -1,8 +1,8 @@
 Website = "https://scastiel.dev"
 
 [Details]
-  Icon = "assets/AppIcon.png"
-  Name = "Gordle"
-  ID = "dev.scastiel.gordle"
-  Version = "2.0.0"
-  Build = 15
+Icon = "assets/AppIcon.png"
+Name = "Gordle"
+ID = "dev.scastiel.gordle"
+Version = "2.0.0"
+Build = 16
