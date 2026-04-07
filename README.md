@@ -2,7 +2,8 @@
 
 - The original Gordle was created by [scastiel](https://github.com/scastiel/gordle).
 - andydotxyz forked the above [here](https://github.com/andydotxyz/gordle) and updated the version of Fyne, added some nice API updates, and addressed the vendor folder.
-- I forked andydotxyz's version and added in difficulty settings (word length), and added a dark/light mode selection as per scastiel's original wishlist.
+- sean-d forked the above [here](https://github.com/sean-d/gordle) and added in difficulty settings (word length), and added a dark/light mode selection as per scastiel's original wishlist.
+- I forked sean-d's version, upgrade fyne and something added.
 
 ![Gordle Demo](assets/GordleDemo.gif)
 
